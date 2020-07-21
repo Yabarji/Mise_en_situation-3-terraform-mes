@@ -1,1 +1,1 @@
-provider aws {}
+provider scaleway {}
