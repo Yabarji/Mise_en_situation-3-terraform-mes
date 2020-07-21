@@ -1,6 +1,5 @@
-data "terraform_remote_state" "network" {
-  backend = "s3"
-  config = {
+terraform {
+  backend "s3" {
     bucket = "0afc-4d0a-8062-stagiaire"
     key    = "backends/kapsule/01/states"
     region = "fr-par"
