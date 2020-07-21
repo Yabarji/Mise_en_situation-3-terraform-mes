@@ -9,5 +9,4 @@ resource "scaleway_k8s_pool_beta" "s01-yassen" {
   cluster_id = scaleway_k8s_cluster_beta.jack.id
   name = "s01-yassen"
   node_type = "DEV1-M"
-  size = 3
-}
+  size = 22}
