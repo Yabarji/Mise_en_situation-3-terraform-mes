@@ -30,7 +30,7 @@ validate:
       - terraform validate
 
   only: 
-      - develop 
+      - merge_requests 
 
   artifacts:
     paths:
