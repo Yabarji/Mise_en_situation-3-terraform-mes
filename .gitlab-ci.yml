@@ -15,9 +15,20 @@ validate:
       - rm -rf .terraform
       - terraform --version
       - terraform init
+      - |
+      #!/bin/sh
+      fmt_diff=$(find . -name "*.tf" | xargs -I{} /terraform fmt -write=false {} | sed '/^\s*$/d')
+      if test -n "$fmt_diff"; then
+        echo "******* Terraform formatting error:"
+        echo ""
+        echo $fmt_diff
+        exit 1
+      fi
+
 
   script:
-      - terraform validate -out ".terraform"
+      - echo Validate ! 
+      - terraform validate -check-variables=false
   artifacts:
     paths:
       - .terraform
@@ -30,4 +41,4 @@ terralint:
       - "/usr/bin/env"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   script:
-    - tflint
+    - tflint --error-with-issues
