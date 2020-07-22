@@ -18,7 +18,7 @@ validate:
       - echo "Terraform Init !"
       - terraform init
       - echo "Terraform Validate !"
-      - terraform validate -check-variables=false
+      - terraform validate
   artifacts:
     paths:
       - .terraform
