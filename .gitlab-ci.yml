@@ -13,7 +13,7 @@ validate:
 
   before_script:
       - terraform --version
-      - tflint --version
+      - tflint -v
       - echo "Terraform Init !"
       - terraform init -input=false
 
