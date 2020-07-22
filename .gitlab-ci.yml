@@ -16,7 +16,7 @@ validate:
 
   script:
       - echo "Terraform Init !"
-      - terreform init
+      - terraform init
       - echo "Terraform Validate !"
       - terraform validate -check-variables=false
   artifacts:
