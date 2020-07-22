@@ -1,5 +1,5 @@
 #!/bin/sh
-    fmt_diff=$(find . -name "*.tf" | xargs -I{} /atelier-1 fmt -write=false {} | sed '/^\s*$/d')
+    fmt_diff=$(find . -name "*.tf" | xargs -I{} atelier-1/ fmt -write=false {} | sed '/^\s*$/d')
     if test -n "$fmt_diff"; then
       echo "******* Terraform formatting error:"
       echo ""
