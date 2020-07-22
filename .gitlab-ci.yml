@@ -22,7 +22,7 @@ validate:
       - terraform validate
 
   only: 
-      - branchess
+      - branches
 
   artifacts:
     paths:
