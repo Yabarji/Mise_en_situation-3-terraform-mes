@@ -1,7 +1,7 @@
 ### Conf Security Group ###cluster Kubernetes ###
 resource "scaleway_k8s_cluster_beta" "s01-yassen" {
   name = "s01-yassen"
-  version = "1.18.0"
+  version = "1.18.6"
   cni = "cilium"
 }
 
