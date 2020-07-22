@@ -17,7 +17,7 @@ validate:
       - terraform init
 
   script:
-      - terraform validate
+      - terraform validate -out ".terraform"
   artifacts:
     paths:
       - .terraform
