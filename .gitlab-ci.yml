@@ -1,3 +1,35 @@
 ---
+stages:
+  - validate
+  - lint
 
-stages: []
+validate:
+  stage: validate
+  image:
+    name: "hashicorp/terraform:0.12.8"
+    entrypoint:
+      - "/usr/bin/env"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  script:
+    - terraform init
+    - terraform validate
+  artifacts:
+    paths:
+      - .terraform
+
+scriptlint:
+  stage: lint
+  image:
+    name: "koalaman/shellcheck-alpine"
+  script:
+    - shellcheck scripts/*
+
+terralint:
+  stage: lint
+  image:
+    name: "wata727/tflint"
+    entrypoint:
+      - "/usr/bin/env"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  script:
+    - tflint
