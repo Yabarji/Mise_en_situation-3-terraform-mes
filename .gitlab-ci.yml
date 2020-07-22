@@ -15,10 +15,15 @@ validate:
       - ./script.sh
 
   script:
-      - echo "Terraform Init !"
+      - terraform --version
+      -  echo "Terraform Init !"
       - terraform init
       - echo "Terraform Validate !"
       - terraform validate
+
+  only: 
+      - branchess
+
   artifacts:
     paths:
       - .terraform
