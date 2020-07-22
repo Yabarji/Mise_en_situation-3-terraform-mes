@@ -11,10 +11,14 @@ validate:
       - "/usr/bin/env"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-  script:
+  before_script:
       - terraform --version
-      -  echo "Terraform Init !"
-      - terraform init
+      - tflint --version
+      - echo "Terraform Init !"
+      - terraform init -input=false
+
+
+  script:
       - echo "Terraform Validate !"
       - terraform validate
 
@@ -30,4 +34,4 @@ terralint:
       - "/usr/bin/env"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   script:
-    - tflintt
+    - tflint
