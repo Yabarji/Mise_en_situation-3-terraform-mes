@@ -7,7 +7,7 @@ before_script:
   - pwd
   - cd atelier_1/
   - echo "Terraform Init !"
-  - terraform init -input=false
+  - terraform init 
 
 validate:
   stage: validate
