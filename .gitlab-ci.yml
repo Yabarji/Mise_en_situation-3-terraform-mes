@@ -12,6 +12,7 @@ validate:
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
   before_script:
+      - pwd
       - terraform --version
       - echo "Terraform Init !"
       - terraform init -input=false
