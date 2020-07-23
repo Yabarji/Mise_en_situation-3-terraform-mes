@@ -3,12 +3,12 @@ stages:
   - validate
   - lint
 
-  before_script:
-      - pwd
-      - cd atelier_1/
-      - terraform --version
-      - echo "Terraform Init !"
-      - terraform init -input=false
+before_script:
+  - pwd
+  - cd atelier_1/
+  - terraform --version
+  - echo "Terraform Init !"
+  - terraform init -input=false
 
 validate:
   stage: validate
