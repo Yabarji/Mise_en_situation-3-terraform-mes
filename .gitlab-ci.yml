@@ -24,8 +24,9 @@ validate:
   artifacts:
     paths:
       - .terraform
+
 terralint:
-  stage: validate
+  stage: lint
   image:
     name: "wata727/tflint"
     entrypoint:
