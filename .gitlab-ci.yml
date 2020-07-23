@@ -13,7 +13,7 @@ validate:
 
   before_script:
       - pwd
-      - cd /atelier_1
+      - cd atelier_1/
       - terraform --version
       - echo "Terraform Init !"
       - terraform init -input=false
