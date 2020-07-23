@@ -12,7 +12,7 @@ validate:
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
   cache:
-    key: ${CI_COMMIT-REF_SLUG}-validate
+    key: ${CI_COMMIT_REF_SLUG}-validate
 
   before_script:
       - pwd
@@ -42,6 +42,6 @@ terralint:
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
   cache:
-    key: ${CI_COMMIT-REF_SLUG}-terralint
+    key: ${CI_COMMIT_REF_SLUG}-terralint
   script:
     - tflint
