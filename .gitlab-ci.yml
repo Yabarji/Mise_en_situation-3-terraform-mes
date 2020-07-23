@@ -11,6 +11,9 @@ validate:
       - "/usr/bin/env"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
+  cache:
+    key: ${CI_COMMIT-REF_SLUG}-validate
+
   before_script:
       - pwd
       - cd atelier_1/
@@ -37,5 +40,8 @@ terralint:
     entrypoint:
       - "/usr/bin/env"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+  cache:
+    key: ${CI_COMMIT-REF_SLUG}-terralint
   script:
     - tflint
