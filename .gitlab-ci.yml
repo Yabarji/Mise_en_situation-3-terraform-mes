@@ -13,14 +13,16 @@ validate:
 
   before_script:
       - terraform --version
-      - tflint -v
       - echo "Terraform Init !"
       - terraform init -input=false
-
 
   script:
       - echo "Terraform Validate !"
       - terraform validate
+
+  except:
+    refs:
+      - master
 
   artifacts:
     paths:
