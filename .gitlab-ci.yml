@@ -3,6 +3,13 @@ stages:
   - validate
   - lint
 
+  before_script:
+      - pwd
+      - cd atelier_1/
+      - terraform --version
+      - echo "Terraform Init !"
+      - terraform init -input=false
+
 validate:
   stage: validate
   image:
@@ -10,13 +17,6 @@ validate:
     entrypoint:
       - "/usr/bin/env"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-
-  before_script:
-      - pwd
-      - cd atelier_1/
-      - terraform --version
-      - echo "Terraform Init !"
-      - terraform init -input=false
 
   script:
       - echo "Terraform Validate !"

@@ -6,8 +6,8 @@ resource "scaleway_k8s_cluster_beta" "ingecloud-eks-01" {
 }
 
 resource "scaleway_k8s_pool_beta" "ingecloud-eks-01" {
-  cluster_id = scaleway_k8s_cluster_beta.ingecloud-eks-sss01.id
+  cluster_id = scaleway_k8s_cluster_beta.ingecloud-eks-01.id
   name = "ingecloud-eks-01"
   node_type = "DEV1-M"
   size = 2
-}
+
