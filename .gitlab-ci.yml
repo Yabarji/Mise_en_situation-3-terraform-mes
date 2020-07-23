@@ -11,9 +11,6 @@ validate:
       - "/usr/bin/env"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}-validate
-
   before_script:
       - pwd
       - cd atelier_1/
@@ -34,14 +31,12 @@ validate:
       - .terraform
 
 terralint:
-  stage: lint
+  stage: validate
   image:
     name: "wata727/tflint"
     entrypoint:
       - "/usr/bin/env"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}-terralint
   script:
     - tflint
