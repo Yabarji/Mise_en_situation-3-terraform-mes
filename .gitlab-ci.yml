@@ -32,5 +32,10 @@ terralint:
     entrypoint:
       - "/usr/bin/env"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+  before_script:
+      - pwd
+      - cd atelier_1/
+
   script:
-    - tflint
+      - tflint
