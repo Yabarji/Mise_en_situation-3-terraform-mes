@@ -1,3 +1,15 @@
+required_providers {
+    scaleway = {
+      source = "terraform-providers/scaleway"
+      version = "~> 1.15"
+    }
+  }
+  required_version = "~> 0.12"
+}
+
+provider "scaleway" {
+}
+
 ### Conf Security Group ###cluster Kubernetes ###
 resource "scaleway_k8s_cluster_beta" "ingecloud-eks-01" {
   name = "ingecloud-eks-01"
