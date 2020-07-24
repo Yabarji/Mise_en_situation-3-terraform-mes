@@ -2,3 +2,4 @@
 *.swo
 *.swp
 credential.sh
+kubeconfig-ingecloud-eks-s01.yaml
